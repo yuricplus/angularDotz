@@ -1,0 +1,13 @@
+<section class="pt-5">
+    <h5 class="text-center text-light">Veja os produtos disponiveis</h5>
+    <div class="row d-flex justify-content-center">
+      <div *ngFor="let item of productsList" class="col-3 card m-5 text-center center">
+          <img class="mx-auto" src={{item.imgUrl}} alt="" width="250px" height="200px">
+          <h6>{{item.name}}</h6>
+          <h5>{{item.price}} Pontos</h5>
+          <a class="btn btn-primary w-100 mt-3 mb-3" routerLink="/rescue" [queryParams]="{ name: item.name, img: item.imgUrl, price: item.price}">
+            Trocar
+          </a>
+      </div>
+    </div>
+</section>

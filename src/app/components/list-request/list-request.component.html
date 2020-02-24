@@ -1,0 +1,25 @@
+<section class="center pt-5">
+  <div class="card-list">
+    <h5 class="pt-1 text-center ">Seu pedidos</h5>
+    <div *ngFor="let list of rescueList.data">
+      <div class="text-left border-bottom pb-3">
+         <div class="row">
+            <div class="col-6">
+                <img src={{list.imgUrl}} alt="" width="250px" height="200px">
+            </div>
+            <div class="col-6 mt-5 text-left pl-4">
+                <h5 class="font-weight-bold">{{list.name}}</h5>
+                <h6>{{list.price}} Pontos</h6>
+                <h6 *ngIf="list.status === 'Cancelado'" class="text-danger">Status: {{list.status}}</h6>
+                <h6 *ngIf="list.status === 'Entregue'" class="text-success">Status: {{list.status}}</h6>
+                <h6 *ngIf="list.status === 'A caminho'" class="text-primary">Status: {{list.status}}</h6>
+            </div>
+         </div>
+      </div>
+    </div>
+    <div class="text-center">
+    <a class="btn btn-primary w-100 mt-5" routerLink="/extract">Veja seu saldo restante</a>
+    <a class="btn btn-primary w-100 mt-5" routerLink="/products">Veja outros Produtos</a>
+    </div>
+  </div>
+</section>
