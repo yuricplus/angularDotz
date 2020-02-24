@@ -1,13 +1,13 @@
 <section>
   <nav class="navbar navbar-light bg-light">
     <img src="https://login.dotz.com.br/assets/images/logo-dotz.png" height="50px">
-    <span class="navbar-text">
+    <span *ngIf="loggeduser === 'true'" class="navbar-text">
       <a routerLink="/products">Produtos</a>
     </span>
-    <span class="navbar-text">
+    <span *ngIf="loggeduser === 'true'" class="navbar-text">
       <a routerLink="/extract">Saldo</a>
     </span>
-    <span class="navbar-text">
+    <span *ngIf="loggeduser === 'true'" class="navbar-text">
       <a routerLink="/request">Seus pedidos</a>
     </span>
     <span class="navbar-text">

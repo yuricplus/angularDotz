@@ -1,7 +1,16 @@
 <section class="center">
- <div class="card-auth mt-5 text-center">
+ <form [formGroup]="form" class="card-auth mt-5 text-center">
      <h6 class="p-3">Encaminhamos um codigo de três digito para o seu e-mail, porfavor digite para validarmos o seu acesso.</h6>
-     <input type="text" class="form-control" placeholder="Digite seu codigo aqui...(default 123)">
-     <button class="btn btn-primary w-100 mt-5">Validar</button>
- </div>
+     <label class="d-block text-left" for="code">Codigo</label>
+     <input 
+     formControlName="code"
+     id="code" 
+     type="number" 
+     class="form-control">
+     <div *ngIf="f.code.touched && f.code.invalid" class="text-danger text-left">
+        <div *ngIf="f.code.errors.required">Codigo obrigatorio.</div>
+        <div *ngIf="f.code.errors.minlength">Porfavor, preencha o campo.</div>
+      </div>
+      <button class="btn btn-primary mt-5 w-100">Validar</button>
+ </form>
 </section>

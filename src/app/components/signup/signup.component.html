@@ -1,22 +1,48 @@
 <section>
     <div class="pt-5 text-center">
-      <form class="signup-card" action="">
+      <form [formGroup]="form" class="signup-card">
         <h3>Cadastre-se</h3>
         <div class="row">
           <div class="col-12">
            <label class="d-block text-left" for="name">Nome</label>
-           <input class="form-control" type="name">
+           <input 
+           formControlName="username"
+           id="username" 
+           type="text" 
+           class="form-control">
+           <div *ngIf="f.username.touched && f.username.invalid" class="text-danger text-left">
+              <div *ngIf="f.username.errors.required">Nome é obrigatorio.</div>
+              <div *ngIf="f.username.errors.minlength">Porfavor, preencha o campo.</div>
+            </div>
           </div>
           <div class="col-12">
             <label class="d-block text-left" for="email">E-mail</label>
-            <input class="form-control" type="email">
+            <input 
+                formControlName="email"
+                id="email" 
+                type="email" 
+                class="form-control"
+                >
+           <div *ngIf="f.email.touched && f.email.invalid" class="text-danger text-left">
+              <div *ngIf="f.email.errors.required">O Campo email é obrigatorio.</div>
+              <div *ngIf="f.email.errors.minlength">Preencha corretamente</div>
+              <div *ngIf="f.email.errors.cannotContainSpace">Username can not contain space.</div>
+           </div>
            </div>
            <div class="col-12">
             <label class="d-block text-left" for="password">Senha</label>
-            <input class="form-control" type="password">
+            <input 
+                formControlName="password"
+                id="password" 
+                type="password" 
+                class="form-control">
+            <div *ngIf="f.password.touched && f.password.invalid" class="text-danger text-left">
+                <div *ngIf="f.password.errors.required">A senha é obrigatoria</div>
+                <div *ngIf="f.password.errors.minlength">Minimo de 6 caracteres</div>
+            </div>
            </div>
            <div class="col-12 pt-5">
-            <button class="btn btn-primary w-100">Cadastrar</button>
+            <button (click)="signup()" type="button" class="btn btn-primary w-100">Cadastrar</button>
            </div>
         </div>
       </form>
