@@ -8,9 +8,10 @@
      type="number" 
      class="form-control">
      <div *ngIf="f.code.touched && f.code.invalid" class="text-danger text-left">
-        <div *ngIf="f.code.errors.required">Codigo obrigatorio.</div>
-        <div *ngIf="f.code.errors.minlength">Porfavor, preencha o campo.</div>
+        <div *ngIf="f.code.errors.required">Codigo obrigatorio</div>
+        <div *ngIf="f.code.errors.minlength">Porfavor, preencha o campo</div>
       </div>
-      <button class="btn btn-primary mt-5 w-100">Validar</button>
+      <button (click)="authUser()" class="btn btn-primary mt-5 w-100">Validar</button>
  </form>
 </section>
+

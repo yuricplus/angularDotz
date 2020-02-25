@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SignupComponent 
-} from './components/signup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { AdressComponent } from './components/adress/adress.component';
 import { ExtractComponent } from './components/extract/extract.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { RescueComponent } from './components/rescue/rescue.component';
-import { ListRequestComponent } from './components/list-request/list-request.component'
+import { ListRequestComponent } from './components/list-request/list-request.component';
 
 const routes: Routes = [
   { 
@@ -25,7 +24,7 @@ const routes: Routes = [
   },
   { 
     path: 'extract',
-    component: ExtractComponent 
+    component: ExtractComponent
   },
   { 
     path: 'products',
@@ -40,7 +39,8 @@ const routes: Routes = [
     component: ListRequestComponent
   },
   { path: '**', 
-    redirectTo: 'signup' }
+    redirectTo: 'products' 
+  }
 ];
 
 @NgModule({

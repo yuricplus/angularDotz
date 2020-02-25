@@ -29,7 +29,11 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['/', 'auth']);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(localStorage.loggedUser){
+      this.router.navigate(['/', 'products']);
+    }
+  }
 
 }
 

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from  '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { ExtractComponent } from './components/extract/extract.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { RescueComponent } from './components/rescue/rescue.component';
 import { ListRequestComponent } from './components/list-request/list-request.component';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { ListRequestComponent } from './components/list-request/list-request.com
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(options),
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

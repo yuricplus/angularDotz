@@ -15,12 +15,14 @@ export class AuthComponent implements OnInit {
   get f(){
     return this.form.controls;
   }
-  
+
+ 
   constructor(private router: Router) {}
+  
 
   authUser() {
     localStorage.setItem('loggedUser', 'true');
-    this.router.navigate(['/', 'products']);
+    this.router.navigate(['/', 'adress']);
   }
 
   ngOnInit(): void {

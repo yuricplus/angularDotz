@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rescue',
@@ -11,9 +12,13 @@ export class RescueComponent implements OnInit {
   name: string;
   img: string;
   price: number;
-  constructor(private route: ActivatedRoute) { }
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(!localStorage.loggedUser){
+      this.router.navigate(['/', 'signup']);
+    }
     this.route.queryParams
       .filter(params => params.name)
       .subscribe(params => {
