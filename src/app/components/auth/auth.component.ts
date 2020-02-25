@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-auth',
@@ -15,12 +16,12 @@ export class AuthComponent implements OnInit {
   get f(){
     return this.form.controls;
   }
-
  
-  constructor(private router: Router) {}
+  constructor(private router: Router, private toastr: ToastrService) {}
   
 
   authUser() {
+    this.toastr.success('Autênticação feita com Sucesso!', 'Toastr fun!');
     localStorage.setItem('loggedUser', 'true');
     this.router.navigate(['/', 'adress']);
   }

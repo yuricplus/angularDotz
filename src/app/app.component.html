@@ -10,7 +10,7 @@
     <span *ngIf="loggeduser === 'true'" class="navbar-text">
       <a routerLink="/request">Seus pedidos</a>
     </span>
-    <span class="navbar-text">
+    <span *ngIf="loggeduser !== 'true'" class="navbar-text">
       <a routerLink="/signup">Cadastre-se</a>
     </span>
   </nav>

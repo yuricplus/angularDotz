@@ -31,7 +31,6 @@ export class ListRequestComponent implements OnInit {
     this.httpClient
     .get<Rescue[]>("https://raw.githubusercontent.com/yuricplus/api-mocks/master/rescue-product.json")
     .subscribe(data => this.rescueList.data = data);
-    console.log(this.rescueList)
   }
 
 }
